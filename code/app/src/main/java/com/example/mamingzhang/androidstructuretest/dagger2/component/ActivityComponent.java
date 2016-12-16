@@ -8,10 +8,14 @@ import dagger.Component;
 
 /**
  * Created by mamingzhang on 16/12/16.
+ * <p>
+ * 负责管理生命周期跟Activity一样的组件
  */
 
 @PerActivity
 @Component(dependencies = AppComponent.class, modules = ActivityModule.class)
 public interface ActivityComponent {
     void inject(BaseActivity baseActivity);
+
+    FragmentComponent getFragmentComponent();
 }

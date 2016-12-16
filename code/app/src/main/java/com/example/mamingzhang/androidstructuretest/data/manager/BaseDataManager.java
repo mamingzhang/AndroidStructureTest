@@ -5,4 +5,5 @@ package com.example.mamingzhang.androidstructuretest.data.manager;
  */
 
 public class BaseDataManager {
+
 }

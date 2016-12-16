@@ -3,10 +3,10 @@ package com.example.mamingzhang.androidstructuretest.dagger2.module;
 import dagger.Module;
 
 /**
- * Created by mamingzhang on 16/12/16.
+ * Created by horsege on 2016/12/17.
  */
 
 @Module
-public class ActivityModule {
+public class FragmentModule {
 
 }

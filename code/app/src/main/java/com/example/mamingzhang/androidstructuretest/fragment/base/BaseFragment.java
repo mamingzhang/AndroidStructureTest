@@ -2,6 +2,7 @@ package com.example.mamingzhang.androidstructuretest.fragment.base;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.mamingzhang.androidstructuretest.R;
+import com.example.mamingzhang.androidstructuretest.activity.base.BaseActivity;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -42,6 +44,12 @@ public class BaseFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        initFragmentComponent();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,4 +59,7 @@ public class BaseFragment extends Fragment {
         return textView;
     }
 
+    private void initFragmentComponent() {
+        ((BaseActivity)getActivity()).getActivityComponent().getFragmentComponent().inject(this);
+    }
 }
