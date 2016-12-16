@@ -11,6 +11,7 @@ import com.example.mamingzhang.androidstructuretest.config.FragmentConfig;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by mamingzhang on 16/12/16.

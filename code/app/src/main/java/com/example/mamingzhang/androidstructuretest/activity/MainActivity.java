@@ -6,10 +6,14 @@ import android.widget.ListView;
 
 import com.example.mamingzhang.androidstructuretest.R;
 import com.example.mamingzhang.androidstructuretest.activity.base.BaseActivity;
+import com.example.mamingzhang.androidstructuretest.activity.base.BaseFragmentContainerActivity;
 import com.example.mamingzhang.androidstructuretest.adapter.MainAdapter;
+import com.example.mamingzhang.androidstructuretest.config.FragmentConfig;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnItemClick;
+import butterknife.OnItemSelected;
 
 public class MainActivity extends BaseActivity {
 
@@ -30,4 +34,8 @@ public class MainActivity extends BaseActivity {
         listView.setAdapter(new MainAdapter());
     }
 
+    @OnItemClick(R.id.listView)
+    public void onItemClick(int positon) {
+        BaseFragmentContainerActivity.actionStart(this, listView.getAdapter().getItem(positon).toString());
+    }
 }
