@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">AndroidStructureTest</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_base_fragment_container">BaseFragmentContainerActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
