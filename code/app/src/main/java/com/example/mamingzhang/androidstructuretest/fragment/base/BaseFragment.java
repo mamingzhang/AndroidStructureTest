@@ -11,9 +11,13 @@ import android.widget.TextView;
 
 import com.example.mamingzhang.androidstructuretest.R;
 import com.example.mamingzhang.androidstructuretest.activity.base.BaseActivity;
+import com.example.mamingzhang.androidstructuretest.data.http.HttpRequestMethod;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+
+import javax.inject.Inject;
+import javax.inject.Provider;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,6 +44,12 @@ public class BaseFragment extends Fragment {
         return null;
     }
 
+    /**
+     * 按需注入
+     */
+    @Inject
+    Provider<HttpRequestMethod> httpRequestMethodProvides;
+
     public BaseFragment() {
         // Required empty public constructor
     }
@@ -57,6 +67,14 @@ public class BaseFragment extends Fragment {
         TextView textView = new TextView(getActivity());
         textView.setText(R.string.hello_blank_fragment);
         return textView;
+    }
+
+    /**
+     * 返回Http请求实例
+     * @return
+     */
+    protected HttpRequestMethod getHttpRequestMethod() {
+        return httpRequestMethodProvides.get();
     }
 
     /**

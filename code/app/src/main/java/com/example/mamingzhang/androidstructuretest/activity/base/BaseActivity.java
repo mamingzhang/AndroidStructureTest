@@ -6,6 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.mamingzhang.androidstructuretest.dagger2.AppComponentHolder;
 import com.example.mamingzhang.androidstructuretest.dagger2.component.ActivityComponent;
 import com.example.mamingzhang.androidstructuretest.dagger2.component.DaggerActivityComponent;
+import com.example.mamingzhang.androidstructuretest.data.http.HttpRequestMethod;
+
+import javax.inject.Inject;
+import javax.inject.Provider;
 
 public class BaseActivity extends AppCompatActivity {
 
@@ -13,6 +17,12 @@ public class BaseActivity extends AppCompatActivity {
      * 用于完成和BaseActivity相关的依赖注入器
      */
     private ActivityComponent activityComponent;
+
+    /**
+     * 按需注入
+     */
+    @Inject
+    Provider<HttpRequestMethod> httpRequestMethodProvides;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

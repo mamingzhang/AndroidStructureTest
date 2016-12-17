@@ -3,6 +3,7 @@ package com.example.mamingzhang.androidstructuretest.dagger2.component;
 import android.content.Context;
 
 import com.example.mamingzhang.androidstructuretest.dagger2.module.AppModule;
+import com.example.mamingzhang.androidstructuretest.data.http.HttpRequestMethod;
 
 import javax.inject.Singleton;
 
@@ -18,4 +19,6 @@ import dagger.Component;
 @Component(modules = AppModule.class)
 public interface AppComponent {
     Context applicationContext();
+
+    HttpRequestMethod httpRequestMethod();
 }
