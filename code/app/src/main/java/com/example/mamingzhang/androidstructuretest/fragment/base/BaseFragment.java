@@ -22,7 +22,7 @@ import javax.inject.Provider;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment {
 
     public static BaseFragment newInstance(Class<? extends BaseFragment> framentCls) {
         try {
@@ -64,13 +64,38 @@ public class BaseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        TextView textView = new TextView(getActivity());
-        textView.setText(R.string.hello_blank_fragment);
-        return textView;
+        View rootView = inflater.inflate(getLayouRes(), container, false);
+        initView(rootView);
+        initData();
+        return rootView;
+    }
+
+    /**
+     * 返回Fragment对应的布局文件ID
+     *
+     * @return
+     */
+    protected abstract int getLayouRes();
+
+    /**
+     * 解析View及相关View初始化操作
+     *
+     * @param rootView
+     */
+    protected void initView(View rootView) {
+
+    }
+
+    /**
+     * 数据加载
+     */
+    protected void initData() {
+
     }
 
     /**
      * 返回Http请求实例
+     *
      * @return
      */
     protected HttpRequestMethod getHttpRequestMethod() {
