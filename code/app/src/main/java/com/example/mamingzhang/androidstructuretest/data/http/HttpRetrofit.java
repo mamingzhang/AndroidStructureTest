@@ -27,7 +27,7 @@ public class HttpRetrofit {
         return new Retrofit.Builder()
                 .baseUrl(API_BASE_URL)
                 .client(okHttpClient)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(CustomResponseConvertyFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
     }

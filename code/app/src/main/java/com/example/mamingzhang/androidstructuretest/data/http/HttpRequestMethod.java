@@ -56,7 +56,7 @@ public class HttpRequestMethod {
                 throw new HttpApiException(HttpApiException.Code_NoLogin, "");
             }
 
-            return httpResult.getResult();
+            return httpResult.getSubjects();
         }
     }
 }

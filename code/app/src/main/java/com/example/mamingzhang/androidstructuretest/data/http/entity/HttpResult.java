@@ -16,7 +16,7 @@ public class HttpResult<T> {
     private String title;
 
     //以下字段相当于具体的Data字段
-    private T result;
+    private T subjects;
 
     public int getCount() {
         return count;
@@ -50,11 +50,11 @@ public class HttpResult<T> {
         this.title = title;
     }
 
-    public T getResult() {
-        return result;
+    public T getSubjects() {
+        return subjects;
     }
 
-    public void setResult(T result) {
-        this.result = result;
+    public void setSubjects(T subjects) {
+        this.subjects = subjects;
     }
 }
