@@ -1,6 +1,7 @@
 package com.example.mamingzhang.androidstructuretest.config;
 
 import com.example.mamingzhang.androidstructuretest.fragment.BasicExampleFragment;
+import com.example.mamingzhang.androidstructuretest.fragment.BasicRealmExampleFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.base.BaseFragment;
 
 import java.util.LinkedHashMap;
@@ -17,5 +18,6 @@ public class FragmentConfig {
     static {
         ExampleFragment = new LinkedHashMap<>();
         ExampleFragment.put("Dagger2及Http封装验证", BasicExampleFragment.class);
+        ExampleFragment.put("Realm数据库数据更新机制验证", BasicRealmExampleFragment.class);
     }
 }

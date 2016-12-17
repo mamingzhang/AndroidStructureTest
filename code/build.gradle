@@ -14,13 +14,17 @@ buildscript {
         classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
         //dagger2
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
-
+        //Realm
+        classpath "io.realm:realm-gradle-plugin:2.1.1"
     }
 }
 
 allprojects {
     repositories {
         jcenter()
+        maven {
+            url 'https://github.com/uPhyca/stetho-realm/raw/master/maven-repo'
+        }
     }
 }
 
