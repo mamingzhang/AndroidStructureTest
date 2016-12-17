@@ -59,7 +59,10 @@ public class BaseFragment extends Fragment {
         return textView;
     }
 
+    /**
+     * 初始化Fragment依赖注入Component
+     */
     private void initFragmentComponent() {
-        ((BaseActivity)getActivity()).getActivityComponent().getFragmentComponent().inject(this);
+        ((BaseActivity) getActivity()).getActivityComponent().getFragmentComponent().inject(this);
     }
 }

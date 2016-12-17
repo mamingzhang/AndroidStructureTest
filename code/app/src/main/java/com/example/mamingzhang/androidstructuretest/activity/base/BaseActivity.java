@@ -22,19 +22,19 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 初始化ActivityCompoent，并且完成注入
-     */
-    private void initActivityComponent() {
-        activityComponent = DaggerActivityComponent.builder().appComponent(AppComponentHolder.getAppComponent()).build();
-        activityComponent.inject(this);
-    }
-
-    /**
      * 返回对应于当前Activity的ActivityComponent，用于Fragment等相关注入操作
      *
      * @return
      */
     public ActivityComponent getActivityComponent() {
         return activityComponent;
+    }
+
+    /**
+     * 初始化ActivityCompoent，并且完成注入
+     */
+    private void initActivityComponent() {
+        activityComponent = DaggerActivityComponent.builder().appComponent(AppComponentHolder.getAppComponent()).build();
+        activityComponent.inject(this);
     }
 }
