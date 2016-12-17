@@ -9,6 +9,8 @@ import com.example.mamingzhang.androidstructuretest.dagger2.module.AppModule;
 import com.facebook.stetho.Stetho;
 import com.uphyca.stetho_realm.RealmInspectorModulesProvider;
 
+import io.realm.Realm;
+
 /**
  * Created by mamingzhang on 16/12/16.
  */
@@ -18,6 +20,9 @@ public class AppApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        //初始化Realm
+        Realm.init(this);
 
         //增加Stetho插件调试，用于查看网络请求以及Realm数据库
         Stetho.initialize(
