@@ -22,6 +22,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 /**
@@ -39,7 +40,7 @@ public class BasicMovieRealmExampleFragment extends BaseFragment implements IHtt
 
     @Override
     protected int getLayouRes() {
-        return R.layout.fragment_basemoviedisplay;
+        return R.layout.fragment_basicrealmmovie;
     }
 
     @Override
@@ -58,19 +59,22 @@ public class BasicMovieRealmExampleFragment extends BaseFragment implements IHtt
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        getHttpRequestMethod().getTopRealmObjectMovie(new ToastProgressSubscriber<List<MovieRealmSubject>>(getContext(), this), 0, 20);
-    }
-
-    @Override
     public void onDestroyView() {
         super.onDestroyView();
 
         if (butterKnifeUnBinder != null) {
             butterKnifeUnBinder.unbind();
         }
+    }
+
+    @OnClick(R.id.loadfromnet_btn)
+    public void onLoadFromNet() {
+        getHttpRequestMethod().getTopRealmObjectMovie(new ToastProgressSubscriber<List<MovieRealmSubject>>(getContext(), this), 0, 20);
+    }
+
+    @OnClick(R.id.loadfromdb_btn)
+    public void onLoadFromDb() {
+
     }
 
     @Override
