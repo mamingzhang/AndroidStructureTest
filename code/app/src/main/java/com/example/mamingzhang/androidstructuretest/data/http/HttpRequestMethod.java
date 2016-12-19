@@ -1,6 +1,7 @@
 package com.example.mamingzhang.androidstructuretest.data.http;
 
 import com.example.mamingzhang.androidstructuretest.data.http.entity.HttpResult;
+import com.example.mamingzhang.androidstructuretest.data.http.entity.MovieRealmSubject;
 import com.example.mamingzhang.androidstructuretest.data.http.entity.MovieSubject;
 
 import java.util.List;
@@ -8,8 +9,6 @@ import java.util.List;
 import javax.inject.Inject;
 
 import retrofit2.Retrofit;
-import rx.Observable;
-import rx.Scheduler;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
@@ -42,6 +41,21 @@ public class HttpRequestMethod {
     public void getTopMovie(Subscriber<List<MovieSubject>> subscriber, int start, int count) {
         httpApiService.getTopMovie(start, count)
                 .map(new HttpApiFun<List<MovieSubject>>())
+                .subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(subscriber);
+    }
+
+    /**
+     *
+     * @param subscriber
+     * @param start
+     * @param count
+     */
+    public void getTopRealmObjectMovie(Subscriber<List<MovieRealmSubject>> subscriber, int start, int count) {
+        httpApiService.getTopRealmMovie(start, count)
+                .map(new HttpApiFun<List<MovieRealmSubject>>())
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
