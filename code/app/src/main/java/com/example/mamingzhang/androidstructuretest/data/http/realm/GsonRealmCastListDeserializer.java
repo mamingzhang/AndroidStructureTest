@@ -1,4 +1,4 @@
-package com.example.mamingzhang.androidstructuretest.data.http.realm.adapter;
+package com.example.mamingzhang.androidstructuretest.data.http.realm;
 
 import com.example.mamingzhang.androidstructuretest.data.http.entity.MovieRealmAvatars;
 import com.example.mamingzhang.androidstructuretest.data.http.entity.MovieRealmCast;
@@ -18,7 +18,7 @@ import io.realm.RealmList;
  * Created by mamingzhang on 16/12/19.
  */
 
-public class GsonRealmCastListTypeAdapter implements JsonDeserializer<RealmList<MovieRealmCast>> {
+public class GsonRealmCastListDeserializer implements JsonDeserializer<RealmList<MovieRealmCast>> {
 
     @Override
     public RealmList<MovieRealmCast> deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {

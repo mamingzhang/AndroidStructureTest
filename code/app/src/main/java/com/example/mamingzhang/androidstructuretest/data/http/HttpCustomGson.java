@@ -1,7 +1,7 @@
 package com.example.mamingzhang.androidstructuretest.data.http;
 
-import com.example.mamingzhang.androidstructuretest.data.http.realm.adapter.GsonRealmCastListTypeAdapter;
-import com.example.mamingzhang.androidstructuretest.data.http.realm.adapter.GsonRealmStringListTypeAdapter;
+import com.example.mamingzhang.androidstructuretest.data.http.realm.GsonRealmCastListDeserializer;
+import com.example.mamingzhang.androidstructuretest.data.http.realm.GsonRealmStringListTypeAdapter;
 import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
 import com.google.gson.Gson;
@@ -32,7 +32,7 @@ public class HttpCustomGson {
                 //注册RealmList<RealmString>解析器
                 .registerTypeAdapter(GsonRealmStringListTypeAdapter.getType(), new GsonRealmStringListTypeAdapter())
                 //注册RealmList<MovieRealmCast>解析器
-                .registerTypeAdapter(GsonRealmCastListTypeAdapter.getType(), new GsonRealmCastListTypeAdapter())
+                .registerTypeAdapter(GsonRealmCastListDeserializer.getType(), new GsonRealmCastListDeserializer())
                 .create();
     }
 

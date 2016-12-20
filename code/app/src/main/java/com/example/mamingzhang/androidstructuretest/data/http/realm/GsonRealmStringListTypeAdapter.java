@@ -1,4 +1,4 @@
-package com.example.mamingzhang.androidstructuretest.data.http.realm.adapter;
+package com.example.mamingzhang.androidstructuretest.data.http.realm;
 
 import com.example.mamingzhang.androidstructuretest.data.http.realm.entity.RealmString;
 import com.google.gson.TypeAdapter;
