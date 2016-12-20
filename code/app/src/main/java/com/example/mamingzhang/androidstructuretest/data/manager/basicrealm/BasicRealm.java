@@ -1,5 +1,9 @@
 package com.example.mamingzhang.androidstructuretest.data.manager.basicrealm;
 
+import com.example.mamingzhang.androidstructuretest.AppApplication;
+
+import java.io.File;
+
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 

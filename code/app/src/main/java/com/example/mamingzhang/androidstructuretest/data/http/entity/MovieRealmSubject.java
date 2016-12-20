@@ -97,7 +97,12 @@ public class MovieRealmSubject extends RealmObject {
 
     @Override
     public String toString() {
-        return "Subject ID ：" + id;
+        StringBuilder builder = new StringBuilder();
+        builder.append("subject id = ").append(id).append("; ");
+        builder.append("casts = ").append(casts).append("; ");
+        builder.append("directors = ").append(directors).append("; ");
+
+        return builder.toString();
     }
 
 }

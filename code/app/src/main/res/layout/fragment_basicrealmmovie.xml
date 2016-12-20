@@ -21,12 +21,22 @@
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/loadfromdb_btn"
+            android:id="@+id/delfromdb_btn1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="加载数据库数据"
+            android:text="Model删除数据"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/delfromdb_btn2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="查询删除数据"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
     </LinearLayout>
