@@ -2,7 +2,6 @@ package com.example.mamingzhang.androidstructuretest.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.widget.ListView;
 
 import com.example.mamingzhang.androidstructuretest.data.http.entity.MovieSubject;
 import com.example.mamingzhang.androidstructuretest.data.http.subscriber.IHttpResultWithoutCodeMsg;

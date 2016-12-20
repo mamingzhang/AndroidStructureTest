@@ -19,7 +19,7 @@ public class CustomResponseConvertyFactory extends Converter.Factory {
      * decoding from JSON (when no charset is specified by a header) will use UTF-8.
      */
     public static CustomResponseConvertyFactory create() {
-        return create(new Gson());
+        return create(HttpCustomGson.createGson());
     }
 
     /**

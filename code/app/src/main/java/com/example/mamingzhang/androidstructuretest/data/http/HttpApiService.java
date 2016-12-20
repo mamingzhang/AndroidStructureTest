@@ -1,6 +1,7 @@
 package com.example.mamingzhang.androidstructuretest.data.http;
 
 import com.example.mamingzhang.androidstructuretest.data.http.entity.HttpResult;
+import com.example.mamingzhang.androidstructuretest.data.http.entity.MovieRealmSubject;
 import com.example.mamingzhang.androidstructuretest.data.http.entity.MovieSubject;
 
 import java.util.List;
@@ -17,4 +18,7 @@ public interface HttpApiService {
 
     @GET("top250")
     Observable<HttpResult<List<MovieSubject>>> getTopMovie(@Query("start") int start, @Query("count") int count);
+
+    @GET("top250")
+    Observable<HttpResult<List<MovieRealmSubject>>> getTopRealmMovie(@Query("start") int start, @Query("count") int count);
 }

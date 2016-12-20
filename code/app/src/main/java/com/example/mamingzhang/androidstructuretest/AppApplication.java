@@ -17,9 +17,13 @@ import io.realm.Realm;
 
 public class AppApplication extends Application {
 
+    private static Application application;
+
     @Override
     public void onCreate() {
         super.onCreate();
+
+        application = this;
 
         //初始化Realm
         Realm.init(this);
@@ -38,5 +42,9 @@ public class AppApplication extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
+    }
+
+    public static Application getApplication() {
+        return application;
     }
 }
