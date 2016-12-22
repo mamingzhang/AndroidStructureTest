@@ -20,6 +20,7 @@ public class BasicRealm {
     static {
         basicRealmCofiguration = new RealmConfiguration.Builder()
                 .name("basicrealm.realm").build();
+        Realm.deleteRealm(basicRealmCofiguration);
     }
 
     public static Realm getBasicRealm() {
