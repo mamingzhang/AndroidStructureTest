@@ -5,6 +5,7 @@ import android.content.Context;
 import com.example.mamingzhang.androidstructuretest.dagger2.module.AppModule;
 import com.example.mamingzhang.androidstructuretest.data.http.HttpRequestMethod;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Component;
@@ -20,5 +21,9 @@ import dagger.Component;
 public interface AppComponent {
     Context applicationContext();
 
-    HttpRequestMethod httpRequestMethod();
+    @Named("Remote")
+    HttpRequestMethod remoteHttpRequestMethod();
+
+    @Named("Local")
+    HttpRequestMethod localHttpRequestMethod();
 }

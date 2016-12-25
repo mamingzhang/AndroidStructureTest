@@ -5,6 +5,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.mamingzhang.androidstructuretest.R;
 import com.example.mamingzhang.androidstructuretest.adapter.BaseMovieDisplayAdapter;
@@ -26,6 +27,8 @@ public class BaseMovieDisplayFragment extends BaseFragment {
 
     @BindView(R.id.moviedisplay_recycleview)
     RecyclerView recyclerView;
+    @BindView(R.id.moviedisplay_tips)
+    TextView tipsTxtView;
 
     private BaseMovieDisplayAdapter baseMovieDisplayAdapter;
 
@@ -47,6 +50,9 @@ public class BaseMovieDisplayFragment extends BaseFragment {
 
         baseMovieDisplayAdapter = new BaseMovieDisplayAdapter(getActivity());
         recyclerView.setAdapter(baseMovieDisplayAdapter);
+
+        recyclerView.setVisibility(View.GONE);
+        tipsTxtView.setVisibility(View.GONE);
     }
 
     @Override
@@ -59,8 +65,20 @@ public class BaseMovieDisplayFragment extends BaseFragment {
     }
 
     protected void refreshSource(List<MovieSubject> movieSubjectList) {
-        if (baseMovieDisplayAdapter != null) {
+        if (baseMovieDisplayAdapter != null && movieSubjectList != null && movieSubjectList.size() > 0) {
             baseMovieDisplayAdapter.refreshSource(movieSubjectList);
+            tipsTxtView.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.VISIBLE);
+        } else {
+            tipsTxtView.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.GONE);
+            tipsTxtView.setText("空数据");
         }
+    }
+
+    protected void refreshFailed(int code, String msg) {
+        tipsTxtView.setVisibility(View.VISIBLE);
+        recyclerView.setVisibility(View.GONE);
+        tipsTxtView.setText(msg);
     }
 }

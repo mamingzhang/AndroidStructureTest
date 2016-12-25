@@ -14,6 +14,8 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
+import static com.example.mamingzhang.androidstructuretest.data.http.HttpResultCode.Code_NoLogin;
+
 /**
  * Created by mamingzhang on 16/12/16.
  */
@@ -24,7 +26,6 @@ public class HttpRequestMethod {
 
     private HttpApiService httpApiService;
 
-    @Inject
     public HttpRequestMethod(Retrofit retrofit) {
         this.retrofit = retrofit;
 
@@ -48,7 +49,6 @@ public class HttpRequestMethod {
     }
 
     /**
-     *
      * @param subscriber
      * @param start
      * @param count
@@ -67,7 +67,7 @@ public class HttpRequestMethod {
         @Override
         public T call(HttpResult<T> httpResult) {
             if (httpResult.getCount() == 0) {
-                throw new HttpApiException(HttpApiException.Code_NoLogin, "");
+                throw new HttpApiException(Code_NoLogin, "");
             }
 
             return httpResult.getSubjects();
