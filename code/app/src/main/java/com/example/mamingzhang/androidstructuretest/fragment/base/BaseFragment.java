@@ -17,6 +17,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.inject.Provider;
 
 /**
@@ -48,7 +49,12 @@ public abstract class BaseFragment extends Fragment {
      * 按需注入
      */
     @Inject
-    Provider<HttpRequestMethod> httpRequestMethodProvides;
+    @Named("Remote")
+    Provider<HttpRequestMethod> remoteHttpRequestMethodProvides;
+
+    @Inject
+    @Named("Local")
+    Provider<HttpRequestMethod> localHttpRequestMethodProvides;
 
     public BaseFragment() {
         // Required empty public constructor
@@ -98,8 +104,17 @@ public abstract class BaseFragment extends Fragment {
      *
      * @return
      */
-    protected HttpRequestMethod getHttpRequestMethod() {
-        return httpRequestMethodProvides.get();
+    protected HttpRequestMethod getRemoteHttpRequestMethod() {
+        return remoteHttpRequestMethodProvides.get();
+    }
+
+    /**
+     * 返回本地Http请求实例
+     *
+     * @return
+     */
+    protected HttpRequestMethod getLocalHttpRequestMethod() {
+        return localHttpRequestMethodProvides.get();
     }
 
     /**

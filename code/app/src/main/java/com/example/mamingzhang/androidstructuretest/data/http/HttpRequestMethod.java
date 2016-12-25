@@ -24,7 +24,6 @@ public class HttpRequestMethod {
 
     private HttpApiService httpApiService;
 
-    @Inject
     public HttpRequestMethod(Retrofit retrofit) {
         this.retrofit = retrofit;
 

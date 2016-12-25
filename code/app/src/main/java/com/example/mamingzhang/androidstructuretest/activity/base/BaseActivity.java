@@ -9,6 +9,7 @@ import com.example.mamingzhang.androidstructuretest.dagger2.component.DaggerActi
 import com.example.mamingzhang.androidstructuretest.data.http.HttpRequestMethod;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.inject.Provider;
 
 public class BaseActivity extends AppCompatActivity {
@@ -22,7 +23,12 @@ public class BaseActivity extends AppCompatActivity {
      * 按需注入
      */
     @Inject
-    Provider<HttpRequestMethod> httpRequestMethodProvides;
+    @Named("Remote")
+    Provider<HttpRequestMethod> remoteHttpRequestMethodProvides;
+
+    @Inject
+    @Named("Local")
+    Provider<HttpRequestMethod> localHttpRequestMethodProvides;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +44,24 @@ public class BaseActivity extends AppCompatActivity {
      */
     public ActivityComponent getActivityComponent() {
         return activityComponent;
+    }
+
+    /**
+     * 返回Http请求实例
+     *
+     * @return
+     */
+    protected HttpRequestMethod getRemoteHttpRequestMethod() {
+        return remoteHttpRequestMethodProvides.get();
+    }
+
+    /**
+     * 返回本地Http请求实例
+     *
+     * @return
+     */
+    protected HttpRequestMethod getLocalHttpRequestMethod() {
+        return localHttpRequestMethodProvides.get();
     }
 
     /**

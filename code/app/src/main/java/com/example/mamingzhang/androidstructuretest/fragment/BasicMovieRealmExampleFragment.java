@@ -114,7 +114,7 @@ public class BasicMovieRealmExampleFragment extends BaseFragment implements IHtt
 
     @OnClick(R.id.loadfromnet_btn)
     public void onLoadFromNet() {
-        getHttpRequestMethod().getTopRealmObjectMovie(new ToastProgressSubscriber<List<MovieRealmSubject>>(getContext(), this), 0, 20);
+        getRemoteHttpRequestMethod().getTopRealmObjectMovie(new ToastProgressSubscriber<List<MovieRealmSubject>>(getContext(), this), 0, 20);
     }
 
     @OnClick(R.id.delfromdb_btn1)

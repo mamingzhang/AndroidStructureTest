@@ -22,7 +22,7 @@ public class BasicExampleFragment extends BaseMovieDisplayFragment implements IH
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getHttpRequestMethod().getTopMovie(new ToastProgressSubscriber<List<MovieSubject>>(getContext(), this), 0 , 20);
+        getRemoteHttpRequestMethod().getTopMovie(new ToastProgressSubscriber<List<MovieSubject>>(getContext(), this), 0 , 20);
     }
 
     @Override

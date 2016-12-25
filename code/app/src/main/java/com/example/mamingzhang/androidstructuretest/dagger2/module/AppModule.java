@@ -46,16 +46,31 @@ public class AppModule {
      * @param okHttpClient
      * @return
      */
-    @Named("ApiRetrofit")
     @Singleton
     @Provides
-    public Retrofit provideHttpApiRetrofit(OkHttpClient okHttpClient) {
+    @Named("Remote")
+    public Retrofit provideRemoteHttpApiRetrofit(OkHttpClient okHttpClient) {
         return new HttpRetrofit().getApiRetrofit(okHttpClient);
     }
 
     @Singleton
     @Provides
-    public HttpRequestMethod provideHttpRequestMenthod(@Named("ApiRetrofit") Retrofit retrofit) {
+    @Named("Local")
+    public Retrofit provideLocalHttpApiRetrofit(OkHttpClient okHttpClient) {
+        return new HttpRetrofit().getLocalApiRetrofit(okHttpClient);
+    }
+
+    @Singleton
+    @Provides
+    @Named("Remote")
+    public HttpRequestMethod provideRemoteHttpRequestMenthod(@Named("Remote") Retrofit retrofit) {
+        return new HttpRequestMethod(retrofit);
+    }
+
+    @Singleton
+    @Provides
+    @Named("Local")
+    public HttpRequestMethod provideLocalHttpRequestMenthod(@Named("Local") Retrofit retrofit) {
         return new HttpRequestMethod(retrofit);
     }
 }
