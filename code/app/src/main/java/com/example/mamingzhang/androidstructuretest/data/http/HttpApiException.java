@@ -1,18 +1,19 @@
 package com.example.mamingzhang.androidstructuretest.data.http;
 
+import static com.example.mamingzhang.androidstructuretest.data.http.HttpResultCode.Code_NoLogin;
+
 /**
  * Created by horsege on 2016/12/17.
  */
 
 public class HttpApiException extends RuntimeException {
-    public static final int Code_NoLogin = 10001;
+
+    private int httpResultCode;
 
     public HttpApiException(int code, String msg) {
         super(reProcessCodeMsg(code, msg));
-    }
 
-    public HttpApiException(String msg) {
-        super(msg);
+        httpResultCode = code;
     }
 
     private static String reProcessCodeMsg(int code, String msg) {
@@ -28,5 +29,9 @@ public class HttpApiException extends RuntimeException {
         }
 
         return resultMsg;
+    }
+
+    public int getHttpResultCode() {
+        return httpResultCode;
     }
 }

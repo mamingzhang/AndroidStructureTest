@@ -75,4 +75,10 @@ public class BaseMovieDisplayFragment extends BaseFragment {
             tipsTxtView.setText("空数据");
         }
     }
+
+    protected void refreshFailed(int code, String msg) {
+        tipsTxtView.setVisibility(View.VISIBLE);
+        recyclerView.setVisibility(View.GONE);
+        tipsTxtView.setText(msg);
+    }
 }
