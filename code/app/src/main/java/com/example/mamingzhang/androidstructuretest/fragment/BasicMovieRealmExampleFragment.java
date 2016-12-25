@@ -38,6 +38,11 @@ import io.realm.RealmResults;
  * <p>
  * 基于Gson自解析RealObject实体以及嵌套RealmObject进行验证，同时对于嵌套ReamObject的存储、查询和删除进行验证
  * 仅用于验证，其实体从实际上来说不合理
+ *
+ * 相关参考资料：
+ * 1.https://gist.github.com/cmelchior/1a97377df0c49cd4fca9
+ * 2.https://futurestud.io/tutorials/gson-getting-started-with-java-json-serialization-deserialization
+ * 3.https://realm.io/
  */
 
 public class BasicMovieRealmExampleFragment extends BaseFragment implements IHttpResultWithoutCodeMsg<List<MovieRealmSubject>> {
