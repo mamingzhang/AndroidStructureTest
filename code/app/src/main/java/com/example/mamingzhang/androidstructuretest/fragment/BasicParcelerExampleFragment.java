@@ -5,7 +5,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.mamingzhang.androidstructuretest.R;
+import com.example.mamingzhang.androidstructuretest.data.http.realm.entity.RealmString;
 import com.example.mamingzhang.androidstructuretest.fragment.base.BaseFragment;
+import com.example.mamingzhang.androidstructuretest.parcel.entity.Country;
 import com.example.mamingzhang.androidstructuretest.parcel.entity.Family;
 import com.example.mamingzhang.androidstructuretest.parcel.entity.Man;
 import com.example.mamingzhang.androidstructuretest.parcel.entity.Person;
@@ -19,6 +21,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import io.realm.RealmList;
 
 /**
  * Created by mamingzhang on 16/12/26.
@@ -31,6 +34,9 @@ import butterknife.Unbinder;
  * 3. http://ryanharter.com/blog/2016/04/08/autovalue-deep-dive/
  * 4. http://ryanharter.com/blog/2016/03/22/autovalue/
  * 5. https://nullpointer.wtf/android/using-retrofit-realm-parceler/
+ * <p>
+ * TODO 1: 源码中对于ParcelClass注解中value值得使用理解上需要研究，结合RealmObject序列化深入验证
+ * TODO 2: 不同序列化策略及其混合使用验证
  */
 
 public class BasicParcelerExampleFragment extends BaseFragment {
@@ -63,6 +69,13 @@ public class BasicParcelerExampleFragment extends BaseFragment {
         Family family = new Family(familyPersons1, familyPersons2);
 
         argument.putParcelable("family", Parcels.wrap(family));
+
+        Country country = new Country();
+        country.countryName = "China";
+        RealmList<RealmString> languages = new RealmList<>();
+        languages.add(new RealmString("Chinese"));
+        country.languages = languages;
+        argument.putParcelable("country", Parcels.wrap(country));
 
         setArguments(argument);
     }
@@ -104,6 +117,14 @@ public class BasicParcelerExampleFragment extends BaseFragment {
 
         }
         builder.append("\n").append("End FamilyPerson2").append("\n\n");
+
+        Country country = Parcels.unwrap(argument.getParcelable("country"));
+        builder.append("countryname---").append(country.countryName).append("\n");
+        if (country.languages != null && country.languages.size() > 0) {
+            for (RealmString language : country.languages) {
+                builder.append("lanuage---").append(language.getVal()).append("\n");
+            }
+        }
 
         txtView.setText(builder.toString());
 

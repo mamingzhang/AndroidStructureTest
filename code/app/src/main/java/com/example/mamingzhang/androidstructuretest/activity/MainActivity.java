@@ -28,6 +28,7 @@ public class MainActivity extends BaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //TODO：ButterKnife当Adapter为内部类的时候不生效，具体见提交commit20659ca
         listView.setAdapter(new MainAdapter());
     }
 
