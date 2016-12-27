@@ -9,6 +9,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by horsege on 2016/12/17.
  * <p>
  * 用于构造不同的Retrofit，主要是基于不同的baseUrl考虑
+ * <p>
+ * 相关参考资料：
+ * 1. 源码解析---http://www.jianshu.com/p/c1a3a881a144
  */
 
 public class HttpRetrofit {
