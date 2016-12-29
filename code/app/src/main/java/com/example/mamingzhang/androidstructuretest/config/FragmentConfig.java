@@ -3,6 +3,7 @@ package com.example.mamingzhang.androidstructuretest.config;
 import com.example.mamingzhang.androidstructuretest.fragment.BasicExampleFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.BasicLocalExampleFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.BasicMovieRealmExampleFragment;
+import com.example.mamingzhang.androidstructuretest.fragment.BasicParcelerExampleFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.BasicRealmExampleFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.base.BaseFragment;
 
@@ -23,5 +24,6 @@ public class FragmentConfig {
         ExampleFragment.put("MockServer本地请求验证", BasicLocalExampleFragment.class);
         ExampleFragment.put("Realm数据库数据更新机制验证", BasicRealmExampleFragment.class);
         ExampleFragment.put("Realm及Gson自动解析相关验证", BasicMovieRealmExampleFragment.class);
+        ExampleFragment.put("Parceler序列化验证", BasicParcelerExampleFragment.class);
     }
 }

@@ -29,6 +29,7 @@ public class AppApplication extends Application {
         Realm.init(this);
 
         //增加Stetho插件调试，用于查看网络请求以及Realm数据库
+        //TODO: Realm数据库在Chrom开发者调试工具中无法正常查看
         Stetho.initialize(
                 Stetho.newInitializerBuilder(this)
                         .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))

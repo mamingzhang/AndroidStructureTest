@@ -31,7 +31,9 @@ public abstract class BaseFragment extends Fragment {
             Object[] params = {};
 
             Constructor<? extends BaseFragment> constructor = framentCls.getConstructor(paramCls);
-            return constructor.newInstance(params);
+            BaseFragment baseFragment = constructor.newInstance(params);
+            baseFragment.configArguments();
+            return baseFragment;
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -115,6 +117,13 @@ public abstract class BaseFragment extends Fragment {
      */
     protected HttpRequestMethod getLocalHttpRequestMethod() {
         return localHttpRequestMethodProvides.get();
+    }
+
+    /**
+     * 配置启动参数
+     */
+    protected void configArguments() {
+
     }
 
     /**

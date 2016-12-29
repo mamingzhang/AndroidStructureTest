@@ -6,8 +6,6 @@ import android.support.annotation.Nullable;
 import com.example.mamingzhang.androidstructuretest.data.http.entity.MovieSubject;
 import com.example.mamingzhang.androidstructuretest.data.http.subscriber.HttpProgressSubscriber;
 import com.example.mamingzhang.androidstructuretest.data.http.subscriber.IHttpResultCodeWithCodeMsg;
-import com.example.mamingzhang.androidstructuretest.data.http.subscriber.IHttpResultWithoutCodeMsg;
-import com.example.mamingzhang.androidstructuretest.data.http.subscriber.ToastProgressSubscriber;
 import com.example.mamingzhang.androidstructuretest.fragment.base.BaseMovieDisplayFragment;
 
 import java.util.List;
