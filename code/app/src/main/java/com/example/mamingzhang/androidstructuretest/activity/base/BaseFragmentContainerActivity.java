@@ -42,4 +42,5 @@ public class BaseFragmentContainerActivity extends BaseActivity {
             getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainer, baseFragment).commitAllowingStateLoss();
         }
     }
+
 }

@@ -33,6 +33,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.mamingzhang.androidstructuretest.activity.base.BaseActivity" />
         </activity>
+
+        <meta-data
+            android:name="com.example.mamingzhang.androidstructuretest.glide.CustomGlideModule"
+            android:value="GlideModule" />
     </application>
 
 </manifest>
