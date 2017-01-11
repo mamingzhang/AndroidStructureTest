@@ -20,6 +20,8 @@ import butterknife.Unbinder;
  * https://github.com/bumptech/glide
  *
  * http://www.jianshu.com/p/7610bdbbad17
+ *
+ * https://github.com/wasabeef/glide-transformations
  */
 public class BasicGlideExampleFragment extends BaseFragment {
 
@@ -49,6 +51,7 @@ public class BasicGlideExampleFragment extends BaseFragment {
                 return false;
             }
         });
+        //Video 、gif listView 、transform list、target、内存自定义键
     }
 
     @Override

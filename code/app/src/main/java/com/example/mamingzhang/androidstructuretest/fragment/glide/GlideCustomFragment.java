@@ -4,24 +4,31 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.Priority;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.mamingzhang.androidstructuretest.R;
 import com.example.mamingzhang.androidstructuretest.fragment.base.BaseFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import jp.wasabeef.glide.transformations.BlurTransformation;
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class GlideCustomFragment extends BaseFragment {
 
     private Unbinder butterKnifeUnBinder;
-    @BindView(R.id.glide_image)
-    ImageView mImageView;
+    @BindView(R.id.glide_image_round)
+    ImageView mRoundImageView;
+    @BindView(R.id.glide_image_circle)
+    ImageView mCircleImageView;
+    @BindView(R.id.glide_image_blur)
+    ImageView mBlurImageView;
+    @BindView(R.id.glide_image_circleblur)
+    ImageView mCircleBlurImageView;
 
     @Override
     protected int getLayouRes() {
-        return R.layout.fragment_glide_img;
+        return R.layout.fragment_glide_custom;
     }
 
     @Override
@@ -35,16 +42,23 @@ public class GlideCustomFragment extends BaseFragment {
 
         Glide.with(this)
                 .load(url)
-//                .crossFade(1000)
-                .animate(android.R.anim.slide_in_left) //动画只在不从缓存中提供时采用。如果图片在缓存内，它应该直接被加载，动画则是没有必要显示的
-//                .bitmapTransform(new BlurTransformation(getContext()))
-//                .bitmapTransform(new RoundedCornersTransformation(getContext(), 50, 0))
-//                .bitmapTransform(new BlurTransformation(getContext(), 25), new CropCircleTransformation(getContext()))
-                .priority(Priority.HIGH)
-//                .thumbnail(0.1f)
-//                .skipMemoryCache(true)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .into(mImageView);
+                .bitmapTransform(new RoundedCornersTransformation(getContext(), 50, 0))
+                .into(mRoundImageView);
+
+        Glide.with(this)
+                .load(url)
+                .bitmapTransform(new CropCircleTransformation(getContext()))
+                .into(mCircleImageView);
+
+        Glide.with(this)
+                .load(url)
+                .bitmapTransform(new BlurTransformation(getContext()))
+                .into(mBlurImageView);
+
+        Glide.with(this)
+                .load(url)
+                .bitmapTransform(new BlurTransformation(getContext()), new CropCircleTransformation(getContext()))
+                .into(mCircleBlurImageView);
     }
 
     @Override
