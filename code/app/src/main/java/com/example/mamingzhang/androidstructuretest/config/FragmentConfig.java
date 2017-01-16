@@ -1,6 +1,7 @@
 package com.example.mamingzhang.androidstructuretest.config;
 
 import com.example.mamingzhang.androidstructuretest.fragment.BasicExampleFragment;
+import com.example.mamingzhang.androidstructuretest.fragment.BasicGlideExampleFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.BasicLocalExampleFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.BasicMovieRealmExampleFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.BasicParcelerExampleFragment;
@@ -25,5 +26,6 @@ public class FragmentConfig {
         ExampleFragment.put("Realm数据库数据更新机制验证", BasicRealmExampleFragment.class);
         ExampleFragment.put("Realm及Gson自动解析相关验证", BasicMovieRealmExampleFragment.class);
         ExampleFragment.put("Parceler序列化验证", BasicParcelerExampleFragment.class);
+        ExampleFragment.put("Glide", BasicGlideExampleFragment.class);
     }
 }
