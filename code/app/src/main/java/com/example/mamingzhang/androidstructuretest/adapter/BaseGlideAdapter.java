@@ -11,6 +11,7 @@ import com.example.mamingzhang.androidstructuretest.fragment.base.BaseFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.glide.GlideCustomFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.glide.GlideGifFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.glide.GlideImageFragment;
+import com.example.mamingzhang.androidstructuretest.fragment.glide.GlideLargeImageFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.glide.GlideMovieFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.glide.GlideResourceFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.glide.GlideTargetFragment;
@@ -32,6 +33,7 @@ public class BaseGlideAdapter extends BaseAdapter {
         ExampleFragment.put("Transformation", GlideCustomFragment.class);
         ExampleFragment.put("Movie", GlideMovieFragment.class);
         ExampleFragment.put("Target", GlideTargetFragment.class);
+        ExampleFragment.put("LargeImage", GlideLargeImageFragment.class);
     }
 
     @Override
