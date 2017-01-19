@@ -5,6 +5,7 @@ import com.example.mamingzhang.androidstructuretest.fragment.BasicGlideExampleFr
 import com.example.mamingzhang.androidstructuretest.fragment.BasicLocalExampleFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.BasicMovieRealmExampleFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.BasicParcelerExampleFragment;
+import com.example.mamingzhang.androidstructuretest.fragment.BasicProtobufExampleFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.BasicRealmExampleFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.base.BaseFragment;
 
@@ -27,5 +28,6 @@ public class FragmentConfig {
         ExampleFragment.put("Realm及Gson自动解析相关验证", BasicMovieRealmExampleFragment.class);
         ExampleFragment.put("Parceler序列化验证", BasicParcelerExampleFragment.class);
         ExampleFragment.put("Glide", BasicGlideExampleFragment.class);
+        ExampleFragment.put("ProtoBuf验证", BasicProtobufExampleFragment.class);
     }
 }

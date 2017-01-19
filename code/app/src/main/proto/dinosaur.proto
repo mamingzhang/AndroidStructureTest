@@ -1,0 +1,15 @@
+package squareup.dinosaurs;
+
+option java_package = "com.example.mamingzhang.androidstructuretest.protobuf";
+
+import "period.proto";
+
+message Dinosaur {
+  // Common name of this dinosaur, like "Stegosaurus".
+  optional string name = 1;
+
+  // URLs with images of this dinosaur.
+  repeated string picture_urls = 2;
+
+  optional squareup.geology.Period period = 5;
+}
