@@ -74,4 +74,6 @@ dependencies {
     //httpclient
     testCompile 'org.apache.httpcomponents:httpclient:4.5.2'
     testCompile 'org.apache.httpcomponents:fluent-hc:4.5.2'
+    //protobuf
+    compile 'com.squareup.wire:wire-runtime:2.2.0'
 }
