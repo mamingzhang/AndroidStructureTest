@@ -9,11 +9,14 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.example.mamingzhang.androidstructuretest"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters 'armeabi'
+        }
     }
     buildTypes {
         release {
@@ -76,4 +79,6 @@ dependencies {
     testCompile 'org.apache.httpcomponents:fluent-hc:4.5.2'
     //protobuf
     compile 'com.squareup.wire:wire-runtime:2.2.0'
+    //xlog
+    compile 'com.tencent.mars:mars-core:1.1.3'
 }

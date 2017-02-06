@@ -7,6 +7,7 @@ import com.example.mamingzhang.androidstructuretest.fragment.BasicMovieRealmExam
 import com.example.mamingzhang.androidstructuretest.fragment.BasicParcelerExampleFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.BasicProtobufExampleFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.BasicRealmExampleFragment;
+import com.example.mamingzhang.androidstructuretest.fragment.BasicXLogExampleFragment;
 import com.example.mamingzhang.androidstructuretest.fragment.base.BaseFragment;
 
 import java.util.LinkedHashMap;
@@ -29,5 +30,7 @@ public class FragmentConfig {
         ExampleFragment.put("Parceler序列化验证", BasicParcelerExampleFragment.class);
         ExampleFragment.put("Glide", BasicGlideExampleFragment.class);
         ExampleFragment.put("ProtoBuf验证", BasicProtobufExampleFragment.class);
+        ExampleFragment.put("XLog验证", BasicXLogExampleFragment.class);
+
     }
 }
