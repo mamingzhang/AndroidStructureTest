@@ -12,6 +12,7 @@
     <!--DEdit-->
     <!--E-->
     <!--F-->
+    <!--G-->
     <application
         android:name=".AppApplication"
         android:allowBackup="true"
