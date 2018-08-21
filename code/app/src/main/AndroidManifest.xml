@@ -9,6 +9,8 @@
     <!--A-->
     <!--B-->
     <!--C-->
+    <!--DEdit-->
+    <!--E-->
     <application
         android:name=".AppApplication"
         android:allowBackup="true"
